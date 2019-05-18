@@ -1,0 +1,234 @@
+/* write your styles here */
+
+body {
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+marquee {
+    background-color: #ed484c;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+
+mark {
+    color: black;
+}
+
+/* ---------> Header <--------- */
+
+header {
+    display: flex;
+    background-color: #4c4c4c;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px;
+    flex: 1
+}
+
+#logo>img {
+    height: 40px;
+    margin-left: 5px;
+}
+
+nav>a {
+    margin: 8px;
+    color: #ababab;
+}
+
+/* ---------> Main > Sections <--------- */
+
+section {
+    background-image: url(images/floral.png);
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+}
+
+section>p {
+    padding: 25px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------> About Section <--------- */
+
+#about {
+    background-color: #f18d97;
+}
+
+#about>h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 3em;
+}
+
+#about>button {
+    border: none;
+    font-size: 1.2em;
+    padding: 1em 5em;
+    background-color: black;
+    color: #f18d97;
+}
+
+/* ---------> Services Section <--------- */
+
+h2 {
+    font-family: 'Satisfy', cursive;
+    font-size: 2em;
+}
+
+#services {
+    background-color: #efece7;
+}
+
+#languages {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+}
+
+figure>i {
+    font-size: 8em;
+}
+
+figure:hover>i {
+    color: #f44336b8;
+}
+
+/* ---------> {ortfolio Section <--------- */
+
+#portfolio {
+    background-color: #ddceb4;
+}
+
+h4 {
+    color: white;
+}
+
+#portfolio img {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+#portfolio-images {
+    display: grid;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    grid-template: repeat(2, 1fr)/repeat(3, 1fr);
+}
+
+#portfolio-images i {
+    font-size: 1.5em;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 100px;
+    padding: 10px;
+    margin: 0px 15px;
+}
+
+#portfolio-images i:hover {
+    font-size: 1.5em;
+    color: black;
+    background-color: white;
+}
+
+#portfolio-images figcaption {
+    display: none;
+}
+
+/* ---------> Contact Section <--------- */
+
+#contact {
+    background-color: #a8bfbe;
+}
+
+#contact>button {
+    font-size: 2.5em;
+    color: #212121;
+    background-color: transparent;
+    border: 1px solid#212121;
+    border-radius: 100px;
+    padding: 15px 20px;
+    margin: 15px;
+}
+
+#contact>button:hover {
+    color: white;
+    background-color: #212121;
+}
+
+/* ---------> Footer <--------- */
+
+footer {
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer i {
+    font-size: 1.2em;
+    margin: 0px 5px;
+}
+
+footer:hover i {
+    color: red;
+}
+
+i {
+    transition: color 2s, background-color 1s;
+}
+
+/* ---------> Media Querries <--------- */
+
+@media (max-width: 600px) {
+    header {
+        position: sticky;
+        top: 0;
+        background-color: rgba(76, 76, 76, 0.8);
+    }
+    #languages {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #portfolio-images {
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        display: grid;
+        grid-template: repeat(6, 1fr)/repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 992px) {
+    header {
+        position: sticky;
+        top: 0;
+        background-color: rgba(76, 76, 76, 0.8);
+    }
+    #languages {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #portfolio-images {
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+        display: grid;
+        grid-template: repeat(3, 1fr)/repeat(2, 1fr);
+    }
+}
