@@ -6,35 +6,52 @@ body {
     font-weight: bold;
 }
 
-marquee {
+#marquee {
     background-color: #ed484c;
     color: white;
-    font-weight: bold;
-    padding: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+#marquee p {
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    100% {
+        transform: translate(-100%, 0);
+    }
 }
 
 mark {
     color: black;
+    padding: 0px 5px;
 }
 
 /* ---------> Header <--------- */
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(76, 76, 76, 0.8);
     display: flex;
-    background-color: #4c4c4c;
     justify-content: space-between;
+    align-content: center;
     align-items: center;
-    padding: 5px 0px;
+    padding: 5px;
     flex: 1
 }
 
 #logo>img {
     height: 40px;
-    margin-left: 5px;
 }
 
 nav>a {
-    margin: 8px;
+    font-size: 0.9em;
+    margin: 5px;
     color: #ababab;
 }
 
@@ -43,7 +60,7 @@ nav>a {
 section {
     background-image: url(images/floral.png);
     margin: 0px;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
 }
 
@@ -52,8 +69,7 @@ section>p {
     border-bottom: 1px solid black;
     border-top: 1px solid black;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto;
 }
 
 /* ---------> About Section <--------- */
@@ -69,8 +85,9 @@ section>p {
 }
 
 #about>button {
+    font-family: 'Montserrat', sans-serif;
     border: none;
-    font-size: 1.2em;
+    font-size: 1.5em;
     padding: 1em 5em;
     background-color: black;
     color: #f18d97;
@@ -102,7 +119,7 @@ figure:hover>i {
     color: #f44336b8;
 }
 
-/* ---------> {ortfolio Section <--------- */
+/* ---------> Portfolio Section <--------- */
 
 #portfolio {
     background-color: #ddceb4;
@@ -112,38 +129,55 @@ h4 {
     color: white;
 }
 
-#portfolio img {
-    width: 200px;
-    height: 150px;
-    border-radius: 10px;
-}
-
 #portfolio-images {
     display: grid;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
+    width: 60%;
+    margin: 0px auto;
     grid-template: repeat(2, 1fr)/repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
 }
 
-#portfolio-images i {
-    font-size: 1.5em;
+#portfolio-images figure {
+    position: relative;
+    z-index: 0;
+    width: 250px;
+}
+
+#portfolio-images figure img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+#portfolio-images figure figcaption {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border-radius: 15px;
+    background-color: #080e0dcc;
+    transform: scaleY(0);
+}
+
+#portfolio-images figure:hover figcaption {
+    transform: scaleY(1);
+}
+
+#portfolio-images figure figcaption i {
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    border-radius: 100px;
+    border-radius: 100%;
     padding: 10px;
-    margin: 0px 15px;
+    margin: 10px;
 }
 
-#portfolio-images i:hover {
-    font-size: 1.5em;
+#portfolio-images figure figcaption i:hover {
     color: black;
     background-color: white;
-}
-
-#portfolio-images figcaption {
-    display: none;
 }
 
 /* ---------> Contact Section <--------- */
@@ -157,9 +191,9 @@ h4 {
     color: #212121;
     background-color: transparent;
     border: 1px solid#212121;
-    border-radius: 100px;
-    padding: 15px 20px;
-    margin: 15px;
+    border-radius: 100%;
+    padding: 12px 15px;
+    margin: 5px;
 }
 
 #contact>button:hover {
@@ -192,43 +226,19 @@ i {
 /* ---------> Media Querries <--------- */
 
 @media (max-width: 600px) {
-    header {
-        position: sticky;
-        top: 0;
-        background-color: rgba(76, 76, 76, 0.8);
-    }
     #languages {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
     #portfolio-images {
-        width: 60%;
-        margin-right: auto;
-        margin-left: auto;
-        display: grid;
         grid-template: repeat(6, 1fr)/repeat(1, 1fr);
     }
 }
 
 @media (min-width: 600px) and (max-width: 992px) {
-    header {
-        position: sticky;
-        top: 0;
-        background-color: rgba(76, 76, 76, 0.8);
-    }
     #languages {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
     #portfolio-images {
-        width: 50%;
-        margin-right: auto;
-        margin-left: auto;
-        display: grid;
         grid-template: repeat(3, 1fr)/repeat(2, 1fr);
     }
 }
